@@ -29,15 +29,10 @@ public class SauceRunner implements SauceOnDemandSessionIdProvider {
     static RemoteWebDriver wd;
 	
 	public static Object sauceCapabilities() throws Exception {
-
-        /* System.setProperty("http.proxyHost", proxyHost);            
-        System.setProperty("http.proxyPort", proxyPort)            
-        System.setProperty("http.proxyUser", userName);            
-        System.setProperty("http.proxyPassword", password); */
-
-		DesiredCapabilities capabilities = new DesiredCapabilities();
+        System.setProperty("https.proxyHost", "proxycacheST.hewitt.com");            
+        System.setProperty("https.proxyPort", "3228"); 
+	DesiredCapabilities capabilities = new DesiredCapabilities();
         RemoteWebDriver wd;
-
         capabilities.setCapability(CapabilityType.BROWSER_NAME, AppVariables.get("Browser"));
         capabilities.setCapability(CapabilityType.VERSION, AppVariables.get("Version"));
         //capabilities.setCapability("deviceName", deviceName);
